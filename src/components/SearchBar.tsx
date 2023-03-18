@@ -40,24 +40,30 @@ class SearchBar extends Component<{}, SearchBarState> {
     const { searchValue } = this.state;
 
     return (
-      <div className="flex w-full max-w-lg bg-white rounded-md">
-        <label htmlFor="search" className="sr-only">
-          Search
-        </label>
-        <input
-          value={searchValue}
-          id="search"
-          name="search"
-          type="text"
-          placeholder="What are you looking for?"
-          className="rounded-md w-full py-2 px-4 text-zinc-600 placeholder:text-zinc-400 placeholder:font-thin"
-          onChange={this.handleChange}
-        />
+      <form className="max-w-lg w-full focus-within:after focus-within:after:z-30 focus-within:after:fixed focus-within:after:top-0 focus-within:after:bottom-0 focus-within:after:block focus-within:after:left-0 focus-within:after:right-0 focus-within:after:bg-zinc-800 focus-within:after:opacity-30 focus-within:after:pointer-events-auto group">
+        <div className="relative p-1.5 flex w-full  bg-white rounded-full group-focus-within:z-50 ">
+          <label htmlFor="search" className="sr-only">
+            Search
+          </label>
+          <input
+            value={searchValue}
+            id="search"
+            name="search"
+            type="text"
+            autoComplete="off"
+            placeholder="What are you looking for?"
+            className="w-full pl-6 bg-transparent pr-4 text-zinc-600 group-focus-within:z-40 placeholder:text-zinc-400 placeholder:font-thin"
+            onChange={this.handleChange}
+          />
 
-        <button className="py-2 border-0 px-4 rounded-md" aria-label="Search">
-          <Icon type="search" className="w-8 fill-zinc-400" />
-        </button>
-      </div>
+          <button
+            className="p-2 border-0 rounded-full transition-all group-focus-within:z-40 hover:bg-zinc-400 group/button"
+            aria-label="Search"
+          >
+            <Icon type="search" className="w-7 h-7 transition-all fill-zinc-400 group-hover/button:fill-white" />
+          </button>
+        </div>
+      </form>
     );
   }
 }
