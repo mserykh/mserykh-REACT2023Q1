@@ -1,5 +1,7 @@
-import Card from '../components/Card';
+import Container from '../components/Container';
 import React, { Component } from 'react';
+import Card from '../components/Card';
+import SearchBar from '../components/SearchBar';
 
 type RootPageProps = {};
 
@@ -34,12 +36,15 @@ export class RootPage extends Component<RootPageProps, RootPageState> {
     const { error, isLoaded, items } = this.state;
     return (
       <main>
-        <h1>This is main page</h1>
-        <ul className="grid grid-cols-5 gap-5">
-          {items.map((item) => (
-           <Card {...item} />
-          ))}
-        </ul>
+        <Container containerClass="py-4 w-full items-center mx-auto">
+          <h1>This is main page</h1>
+          <SearchBar />
+          <ul className="grid grid-cols-5 gap-5">
+            {items.map((item) => (
+              <Card {...item}  key={item.id} />
+            ))}
+          </ul>
+        </Container>
       </main>
     );
   }

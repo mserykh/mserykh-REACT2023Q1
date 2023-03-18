@@ -35,10 +35,14 @@ class Card extends Component<CardProps> {
     } = this.props;
 
     return (
-      <li className="border border-zinc-600 rounded-2xl overflow-hidden drop-shadow-lg" key={id}>
+      <li className="border border-zinc-100 rounded-xl overflow-hidden drop-shadow-md bg-white p-4">
         <div>
-          <h2 className='text-2xl font-semibold'>{title}</h2>
-          <p>{discountPercentage && discountPercentage > 0 ? `${price}€ ${price - price * discountPercentage / 100}€` :`${price}€`}</p>
+          <h2 className="text-2xl font-semibold">{title}</h2>
+          <p>
+            {discountPercentage && discountPercentage > 0
+              ? `${price}€ ${price - (price * discountPercentage) / 100}€`
+              : `${price}€`}
+          </p>
           <span>{discountPercentage}% OFF</span>
           <span>{stock > 0 ? `${stock} items left` : 'Out of stock'}</span>
         </div>
