@@ -48,7 +48,7 @@ class SearchBar extends Component<{}, SearchBarState> {
             name="search"
             type="text"
             placeholder="What are you looking for?"
-            className="p-2 rounded-md placeholder:text-zinc-400 placeholder:font-thin"
+            className="w-full max-w-xs p-2 rounded-md placeholder:text-zinc-400 placeholder:font-thin"
             onChange={this.handleChange}
           />
         </label>

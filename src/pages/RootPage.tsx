@@ -22,7 +22,7 @@ export class RootPage extends Component<RootPageProps, RootPageState> {
   }
 
   componentDidMount() {
-    fetch('https://dummyjson.com/products')
+    fetch('https://dummyjson.com/products?limit=10&skip=60')
       .then((res) => res.json())
       .then((result) => {
         this.setState({
@@ -39,7 +39,7 @@ export class RootPage extends Component<RootPageProps, RootPageState> {
         <Container containerClass="py-4 w-full items-center mx-auto">
           <h1>This is main page</h1>
           <SearchBar />
-          <ul className="grid grid-cols-5 gap-5">
+          <ul className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
             {items.map((item) => (
               <Card {...item}  key={item.id} />
             ))}
