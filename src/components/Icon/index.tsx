@@ -1,8 +1,12 @@
 import React from 'react';
+import Basket from './IconTypes/Basket';
 import Logo from './IconTypes/Logo';
+import Search from './IconTypes/Search';
 
 const iconMap = {
+  basket: Basket,
   logo: Logo,
+  search: Search,
 };
 
 type IconProps = {

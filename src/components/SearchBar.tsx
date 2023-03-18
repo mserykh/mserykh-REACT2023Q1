@@ -1,4 +1,5 @@
-import React, { Component, createRef } from 'react';
+import React, { Component } from 'react';
+import Icon from './Icon';
 
 type SearchBarState = {
   searchValue: string;
@@ -22,7 +23,6 @@ class SearchBar extends Component<{}, SearchBarState> {
   componentWillUnmount() {
     this.handleUnloadPage();
     window.removeEventListener('beforeunload', this.handleUnloadPage);
-
   }
 
   handleChange = (event: React.FormEvent<HTMLInputElement>) => {
@@ -34,25 +34,29 @@ class SearchBar extends Component<{}, SearchBarState> {
   handleUnloadPage = () => {
     const searchValue = this.state.searchValue || '';
     localStorage.setItem('searchValue', searchValue);
-  }
+  };
 
   render() {
     const { searchValue } = this.state;
 
     return (
-      <div className="bg-amber-400 p-2">
-        <label htmlFor="search">
-          <input
-            value={searchValue}
-            id="search"
-            name="search"
-            type="text"
-            placeholder="What are you looking for?"
-            className="w-full max-w-xs p-2 rounded-md placeholder:text-zinc-400 placeholder:font-thin"
-            onChange={this.handleChange}
-          />
+      <div className="flex w-full max-w-lg bg-white rounded-md">
+        <label htmlFor="search" className="sr-only">
+          Search
         </label>
-        <button className="py-2 border-0 px-4 rounded-md">Find</button>
+        <input
+          value={searchValue}
+          id="search"
+          name="search"
+          type="text"
+          placeholder="What are you looking for?"
+          className="rounded-md w-full py-2 px-4 text-zinc-600 placeholder:text-zinc-400 placeholder:font-thin"
+          onChange={this.handleChange}
+        />
+
+        <button className="py-2 border-0 px-4 rounded-md" aria-label="Search">
+          <Icon type="search" className="w-8 fill-zinc-400" />
+        </button>
       </div>
     );
   }

@@ -42,11 +42,11 @@ class Card extends Component<CardProps> {
           <p>
             {discountPercentage && discountPercentage > 0 ? (
               <span>
-                <s>{`${price}€`}</s>
-                {` ${Math.round(price - (price * discountPercentage) / 100)}€`}
+                <s >{`${price}€`}</s>
+                <span className='text-xl font-medium'>{` ${Math.round(price - (price * discountPercentage) / 100)}€`}</span>
               </span>
             ) : (
-              `${price}€`
+              <span className='font-medium'>{`${price}€`}</span>
             )}
           </p>
           {discountPercentage > 0 && (
