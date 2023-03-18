@@ -1,23 +1,19 @@
 import React, { Component } from 'react';
-import Card from '../components/Card';
+import Card, { CardProps } from '../components/Card';
 import Container from '../components/Container';
 import Header from '../components/Header';
 
-type RootPageProps = {};
-
 type RootPageState = {
-  error: any;
   isLoaded: boolean;
-  items: any[];
+  items: CardProps[];
 };
 
-export class RootPage extends Component<RootPageProps, RootPageState> {
-  constructor(props: RootPageProps) {
+export class RootPage extends Component<Record<string, never>, RootPageState> {
+  constructor(props: Record<string, never>) {
     super(props);
     this.state = {
-      error: null,
       isLoaded: false,
-      items: [],
+      items: [] as CardProps[],
     };
   }
 
@@ -33,7 +29,7 @@ export class RootPage extends Component<RootPageProps, RootPageState> {
   }
 
   render() {
-    const { error, isLoaded, items } = this.state;
+    const { items } = this.state;
     return (
       <main>
         <Header />

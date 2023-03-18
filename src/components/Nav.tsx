@@ -28,10 +28,16 @@ class Nav extends Component {
                       to={route.route}
                       className="relative text-black transition-all after:-bottom-1.5 after:left-1/2 after:transition-all after:opacity-0 after:absolute after:w-1.5 after:h-1.5 after:rounded-full after:bg-amber-400 group-hover:text-amber-400 group-hover:after:opacity-100"
                     >
-                      {({isActive}) => (
-                        <span className={clsx(["p-2", isActive && "relative text-amber-400 after:bottom-0.5 after:left-1/2 after:transition-all after:absolute after:w-1.5 after:h-1.5 after:rounded-full after:bg-amber-400"]
-                          )}
-                        >{route.title}</span>
+                      {({ isActive }) => (
+                        <span
+                          className={clsx([
+                            'p-2',
+                            isActive &&
+                              'relative text-amber-400 after:bottom-0.5 after:left-1/2 after:transition-all after:absolute after:w-1.5 after:h-1.5 after:rounded-full after:bg-amber-400',
+                          ])}
+                        >
+                          {route.title}
+                        </span>
                       )}
                     </NavLink>
                   </li>

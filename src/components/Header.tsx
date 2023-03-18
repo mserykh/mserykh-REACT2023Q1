@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import SearchBar from '../components/SearchBar';
 import Container from './Container';
 import Icon from './Icon';
-import SearchBar from '../components/SearchBar';
 import Logo from './Logo';
 
 class Header extends Component {
@@ -12,7 +11,10 @@ class Header extends Component {
         <Container containerClass="py-6 flex flex-col gap-y-4 md:flex-row gap-x-2 w-full items-center mx-auto justify-between">
           <Logo />
           <SearchBar />
-          <Icon type="basket" className="w-10 fill-white hover:fill-black transition-all cursor-pointer" />
+          <Icon
+            type="basket"
+            className="w-10 fill-white hover:fill-black transition-all cursor-pointer"
+          />
         </Container>
       </header>
     );

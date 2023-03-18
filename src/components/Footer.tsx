@@ -20,13 +20,19 @@ class Footer extends Component {
                 </NavLink>
               </li>
               <li>
-                <NavLink to={'/about'} className="text-white p-2 hover:underline">About</NavLink>
+                <NavLink to={'/about'} className="text-white p-2 hover:underline">
+                  About
+                </NavLink>
               </li>
             </ul>
           </nav>
           <div className="text-white font-medium flex gap-2">
-            <Link to="https://www.github.com/mserykh" className="text-white p-2 hover:underline">Mady by mserykh</Link>
-            <Link to="https://rs.school" className="text-white p-2 hover:underline">React course by RSSchool</Link>
+            <Link to="https://www.github.com/mserykh" className="text-white p-2 hover:underline">
+              Mady by mserykh
+            </Link>
+            <Link to="https://rs.school" className="text-white p-2 hover:underline">
+              React course by RSSchool
+            </Link>
           </div>
         </Container>
       </footer>

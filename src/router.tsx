@@ -17,6 +17,6 @@ export const router = createBrowserRouter([
         element: <AboutPage />,
       },
     ],
-    errorElement: <ErrorPage />
+    errorElement: <ErrorPage />,
   },
 ]);

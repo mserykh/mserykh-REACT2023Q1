@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-type CardProps = {
+export type CardProps = {
   id: string;
   title: string;
   description: string;
@@ -20,19 +20,7 @@ class Card extends Component<CardProps> {
   }
 
   render() {
-    const {
-      id,
-      title,
-      description,
-      price,
-      discountPercentage,
-      rating,
-      stock,
-      brand,
-      category,
-      thumbnail,
-      images,
-    } = this.props;
+    const { title, price, discountPercentage, rating, stock, thumbnail } = this.props;
 
     return (
       <li className="relative flex flex-col border border-zinc-100 rounded-xl drop-shadow-md bg-white">
@@ -42,11 +30,13 @@ class Card extends Component<CardProps> {
           <p>
             {discountPercentage && discountPercentage > 0 ? (
               <span>
-                <s >{`${price}€`}</s>
-                <span className='text-xl font-medium'>{` ${Math.round(price - (price * discountPercentage) / 100)}€`}</span>
+                <s>{`${price}€`}</s>
+                <span className="text-xl font-medium">{` ${Math.round(
+                  price - (price * discountPercentage) / 100
+                )}€`}</span>
               </span>
             ) : (
-              <span className='font-medium'>{`${price}€`}</span>
+              <span className="font-medium">{`${price}€`}</span>
             )}
           </p>
           {discountPercentage > 0 && (

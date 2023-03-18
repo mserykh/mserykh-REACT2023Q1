@@ -15,7 +15,7 @@ type IconProps = {
   pathClass?: string;
 };
 
-export default function Icon({ type, className, pathClass }: IconProps) {
+export default function Icon({ type, className }: IconProps) {
   const IconComponent = iconMap[type];
   if (!IconComponent) return null;
 

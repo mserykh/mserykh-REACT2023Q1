@@ -5,8 +5,8 @@ type SearchBarState = {
   searchValue: string;
 };
 
-class SearchBar extends Component<{}, SearchBarState> {
-  constructor(props: {}) {
+class SearchBar extends Component<Record<string, never>, SearchBarState> {
+  constructor(props: Record<string, never>) {
     super(props);
     this.state = {
       searchValue: '',
@@ -60,7 +60,10 @@ class SearchBar extends Component<{}, SearchBarState> {
             className="p-2 border-0 rounded-full transition-all group-focus-within:z-40 hover:bg-zinc-400 group/button"
             aria-label="Search"
           >
-            <Icon type="search" className="w-7 h-7 transition-all fill-zinc-400 group-hover/button:fill-white" />
+            <Icon
+              type="search"
+              className="w-7 h-7 transition-all fill-zinc-400 group-hover/button:fill-white"
+            />
           </button>
         </div>
       </form>
