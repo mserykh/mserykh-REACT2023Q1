@@ -11,3 +11,7 @@ export default function Basket({ className }: IconProps) {
     </svg>
   );
 }
+
+Basket.defaultProps = {
+  className: null,
+};

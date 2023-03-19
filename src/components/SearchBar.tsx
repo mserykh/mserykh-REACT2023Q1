@@ -32,8 +32,8 @@ class SearchBar extends Component<Record<string, never>, SearchBarState> {
   };
 
   handleUnloadPage = () => {
-    const searchValue = this.state.searchValue || '';
-    localStorage.setItem('searchValue', searchValue);
+    const { searchValue } = this.state;
+    localStorage.setItem('searchValue', searchValue || '');
   };
 
   render() {
@@ -42,9 +42,6 @@ class SearchBar extends Component<Record<string, never>, SearchBarState> {
     return (
       <form className="max-w-lg w-full focus-within:after focus-within:after:z-30 focus-within:after:fixed focus-within:after:top-0 focus-within:after:bottom-0 focus-within:after:block focus-within:after:left-0 focus-within:after:right-0 focus-within:after:bg-zinc-800 focus-within:after:opacity-30 focus-within:after:pointer-events-auto group">
         <div className="relative p-1.5 flex w-full  bg-white rounded-full group-focus-within:z-50 ">
-          <label htmlFor="search" className="sr-only">
-            Search
-          </label>
           <input
             value={searchValue}
             id="search"
@@ -59,6 +56,7 @@ class SearchBar extends Component<Record<string, never>, SearchBarState> {
           <button
             className="p-2 border-0 rounded-full transition-all group-focus-within:z-40 hover:bg-zinc-400 group/button"
             aria-label="Search"
+            type="button"
           >
             <Icon
               type="search"

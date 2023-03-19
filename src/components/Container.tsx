@@ -1,17 +1,20 @@
 import clsx from 'clsx';
-import React, { Component } from 'react';
+import React from 'react';
 
 type Props = {
   containerClass?: string;
   children?: React.ReactNode;
 };
 
-class Container extends Component<Props> {
-  render() {
-    const { children, containerClass } = this.props;
+function Container(props: Props) {
+  const { children, containerClass } = props;
 
-    return <div className={clsx('px-10 max-w-6xl w-full', containerClass)}>{children}</div>;
-  }
+  return <div className={clsx('px-10 max-w-6xl w-full', containerClass)}>{children}</div>;
 }
 
 export default Container;
+
+Container.defaultProps = {
+  containerClass: null,
+  children: null,
+};

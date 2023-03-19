@@ -4,15 +4,13 @@ import Container from '../components/Container';
 import Header from '../components/Header';
 
 type RootPageState = {
-  isLoaded: boolean;
   items: CardProps[];
 };
 
-export class RootPage extends Component<Record<string, never>, RootPageState> {
+class RootPage extends Component<Record<string, never>, RootPageState> {
   constructor(props: Record<string, never>) {
     super(props);
     this.state = {
-      isLoaded: false,
       items: [] as CardProps[],
     };
   }
@@ -22,7 +20,6 @@ export class RootPage extends Component<Record<string, never>, RootPageState> {
       .then((res) => res.json())
       .then((result) => {
         this.setState({
-          isLoaded: true,
           items: result.products,
         });
       });
@@ -45,3 +42,5 @@ export class RootPage extends Component<Record<string, never>, RootPageState> {
     );
   }
 }
+
+export default RootPage;

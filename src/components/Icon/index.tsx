@@ -12,7 +12,6 @@ const iconMap = {
 type IconProps = {
   type: keyof typeof iconMap;
   className?: string;
-  pathClass?: string;
 };
 
 export default function Icon({ type, className }: IconProps) {
@@ -21,3 +20,7 @@ export default function Icon({ type, className }: IconProps) {
 
   return <IconComponent className={className} />;
 }
+
+Icon.defaultProps = {
+  className: null,
+};

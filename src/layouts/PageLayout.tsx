@@ -1,7 +1,7 @@
 import React from 'react';
 import Container from '../components/Container';
 
-export function PageLayout() {
+function PageLayout() {
   return (
     <main>
       <Container containerClass="py-4 w-full items-center mx-auto">
@@ -10,3 +10,5 @@ export function PageLayout() {
     </main>
   );
 }
+
+export default PageLayout;

@@ -11,3 +11,7 @@ export default function Logo({ className }: IconProps) {
     </svg>
   );
 }
+
+Logo.defaultProps = {
+  className: null,
+};

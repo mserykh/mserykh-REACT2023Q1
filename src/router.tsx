@@ -3,7 +3,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import { MainLayout } from './layouts';
 import { AboutPage, ErrorPage, RootPage } from './pages';
 
-export const router = createBrowserRouter([
+const router = createBrowserRouter([
   {
     path: '/',
     element: <MainLayout />,
@@ -20,3 +20,5 @@ export const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
 ]);
+
+export default router;
