@@ -2,20 +2,20 @@ import '@testing-library/jest-dom';
 import { render, screen, waitFor } from '@testing-library/react';
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
-import AboutPage from './pages/AboutPage';
-import ErrorPage from './pages/ErrorPage';
 import React from 'react';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import { describe, it } from 'vitest';
+import AboutPage from './pages/AboutPage';
+import ErrorPage from './pages/ErrorPage';
 import RootPage from './pages/RootPage';
 
 const renderWithRouter = (route = '/') => {
   return render(
     <MemoryRouter initialEntries={[route]}>
       <Routes>
-        <Route path="/" element={<RootPage />}></Route>
-        <Route path="/about" element={<AboutPage />}></Route>
-        <Route path="/*" element={<ErrorPage />}></Route>
+        <Route path="/" element={<RootPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/*" element={<ErrorPage />} />
       </Routes>
     </MemoryRouter>
   );
