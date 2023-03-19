@@ -15,14 +15,16 @@ class RootPage extends Component<Record<string, never>, RootPageState> {
     };
   }
 
-  componentDidMount() {
-    fetch('https://dummyjson.com/products?limit=12&skip=60')
-      .then((res) => res.json())
-      .then((result) => {
-        this.setState({
-          items: result.products,
-        });
+  async componentDidMount() {
+    try {
+      const response = await fetch('https://dummyjson.com/products?limit=12&skip=60');
+      const result = await response.json();
+      this.setState({
+        items: result.products,
       });
+    } catch (error) {
+      console.log('error fetching');
+    }
   }
 
   render() {
