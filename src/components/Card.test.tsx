@@ -19,7 +19,7 @@ const props: CardProps = {
 describe('Card', () => {
   test('renders product information correctly', () => {
     render(<Card {...props} />);
-    const title = screen.getByRole('heading', { level: 2 });
+    const title = screen.getByRole('heading', { level: 3 });
     const price = screen.getByText(
       `${Math.round(props.price - (props.price * props.discountPercentage) / 100)}€`
     );

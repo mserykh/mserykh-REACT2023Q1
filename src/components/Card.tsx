@@ -20,7 +20,7 @@ function Card(props: CardProps) {
   return (
     <li className="relative flex flex-col border border-zinc-100 rounded-xl drop-shadow-md bg-white">
       <div className="p-4">
-        <h2 className="text-2xl font-semibold">{title}</h2>
+        <h3 className="text-2xl font-semibold">{title}</h3>
         <p>Rating: {rating}</p>
         <p>
           {discountPercentage && discountPercentage > 0 ? (

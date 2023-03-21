@@ -77,7 +77,7 @@ describe('Router', () => {
   it('Renders Main page', async () => {
     renderWithRouter('/');
     await waitFor(() =>
-      expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Buy at Better buy!')
+      expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent('Buy at Better buy!')
     );
   });
   it('Renders About page', () => {
